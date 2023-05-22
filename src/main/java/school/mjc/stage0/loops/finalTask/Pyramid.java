@@ -5,26 +5,23 @@ public class Pyramid {
         int spaces = cathetusLength - 1;
         int matters = 1;
         for (int i = 1; i <= cathetusLength; i++) {
-
             for (int j = 1; j <= spaces; j++) {
                 System.out.print(" ");
             }
             boolean checker = true;
-            int counter = 0;
+            int counter = 1, checkCounter = 1;
             for (int j = matters; j >= 1 && j <= matters; ) {
                 if (j == 1) checker = false;
+                System.out.print(j);
                 if (checker) j--;
                 else j++;
-                System.out.print(j);
                 counter++;
-                if (counter >= matters) break;
-            }
-            for (int j = 1; j <= spaces; j++) {
-                System.out.print(" ");
+                if (counter == checkCounter) break;
             }
             System.out.println();
-            matters += 2;
-            spaces -= 2;
+            matters++;
+            spaces--;
+            checkCounter += 2;
         }
     }
     public static void main(String[] args) {
